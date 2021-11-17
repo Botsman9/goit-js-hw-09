@@ -1,3 +1,5 @@
+import Notiflix from 'notiflix';
+
 import flatpickr from 'flatpickr';
 
 import 'flatpickr/dist/flatpickr.min.css';
@@ -49,6 +51,7 @@ const options = {
     if (options.defaultDate.getTime() < selectedDates[0].getTime()) {
       btnS.disabled = false;
     } else {
+      console.log(Notiflix.Notify.failure('Please choose a date in the future'));
       window.alert('Please choose a date in the future');
     }
 
